@@ -10,15 +10,16 @@ public class JSONLoadTest {
 	public void testRandomCity() {
 		SimpleWSImpl impl = new SimpleWSImpl();
 		String response = impl.getRandomCity();
-		assertTrue("Successfully retrieved a city", response != null);
+		assertTrue("Successfully retrieved a random city", response != null);
 	}
 
 	@Test
 	public void testGetCountryForRandomCity() {
 		SimpleWSImpl impl = new SimpleWSImpl();
 		String city = impl.getRandomCity();
+		assertTrue("Successfully retrieved a random city", city != null);
 		String response = impl.getCountryForCity(city);
-		assertTrue("Successfully retrieved a country", response != null);
+		assertTrue("Successfully retrieved a country for random city (" + city + ")", response != null);
 	}
 
 	@Test

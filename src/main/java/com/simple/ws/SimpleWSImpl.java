@@ -33,8 +33,6 @@ import java.nio.file.Paths;
 @WebService(endpointInterface = "com.simple.ws.SimpleWS")
 public class SimpleWSImpl implements SimpleWS{
 
-	private String cityStash = null;
-	private String countryStash = null;
 	private JSONArray stashCityList = null;
  
 	private JSONArray getCityList() throws Exception {
@@ -43,7 +41,7 @@ public class SimpleWSImpl implements SimpleWS{
 		try {
 			String fileName = "com/simple/ws/thin.city.list.json";
 			Path path = Paths.get(this.getClass().getClassLoader()
-      			.getResource(fileName).toURI());
+				.getResource(fileName).toURI());
 			if (path != null) {
 				String content = new String(Files.readAllBytes(path));
 
@@ -70,22 +68,18 @@ public class SimpleWSImpl implements SimpleWS{
 				stashCityList = getCityList();
 			}
 			JSONObject cityObject = getRandomObject(stashCityList);
-			parseCityObject( cityObject );
-			cityStash = (String) cityObject.get("name");
-			countryStash = (String) cityObject.get("country");
+//			parseCityObject( cityObject );
+			return (String) cityObject.get("name");
 		} catch (Exception e) {
-			cityStash = null;
-			countryStash = null;
 			e.printStackTrace();
 		}
-		return cityStash;
+		return null;
 	}
 
 	@Override
 	public String getCountryForCity(String city) {
-		if (countryStash != null) {
-			return countryStash;
-		}
+		System.out.println("Retrieving country for city: " + city);
+		System.out.println("-------------------------------------------");
 		if (stashCityList ==  null) {
 			try {
 				stashCityList = getCityList();
@@ -102,7 +96,7 @@ public class SimpleWSImpl implements SimpleWS{
 				return (String) cityObject.get("country");
 			}
 		}
-		return null;
+		return "Country not found for city " + city;
 	}
 
 	private static void parseCityObject(JSONObject cityObject) {
