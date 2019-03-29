@@ -232,5 +232,257 @@
       "lon": 100.51667,
       "lat": 13.75
     }
-  }
+  },
+  {
+    "id": 6077243,
+    "name": "Montreal",
+    "country": "CA",
+    "coord": {
+      "lon": -73.587807,
+      "lat": 45.508839
+    }
+  },
+  {
+    "id": 6167865,
+    "name": "Toronto",
+    "country": "CA",
+    "coord": {
+      "lon": -79.416298,
+      "lat": 43.700111
+    }
+  },
+  {
+    "id": 4487042,
+    "name": "Raleigh",
+    "country": "US",
+    "coord": {
+      "lon": -78.638611,
+      "lat": 35.772099
+    }
+  },
+  {
+    "id": 4930956,
+    "name": "Boston",
+    "country": "US",
+    "coord": {
+      "lon": -71.059769,
+      "lat": 42.358429
+    }
+  },
+  {
+    "id": 4984247,
+    "name": "Ann Arbor",
+    "country": "US",
+    "coord": {
+      "lon": -83.740883,
+      "lat": 42.277561
+    }
+  },
+  {
+    "id": 4671576,
+    "name": "Atlanta",
+    "country": "US",
+    "coord": {
+      "lon": -94.164352,
+      "lat": 33.113739
+    }
+  },
+  {
+    "id": 4792307,
+    "name": "Washington",
+    "country": "US",
+    "coord": {
+      "lon": -78.159439,
+      "lat": 38.713451
+    }
+  },
+  {
+    "id": 4589387,
+    "name": "North Charleston",
+    "country": "US",
+    "coord": {
+      "lon": -80.007507,
+      "lat": 32.888561
+    }
+  },
+  {
+    "id": 4612828,
+    "name": "Charlotte",
+    "country": "US",
+    "coord": {
+      "lon": -87.339729,
+      "lat": 36.17728
+    }
+  },
+  {
+    "id": 4887398,
+    "name": "Chicago",
+    "country": "US",
+    "coord": {
+      "lon": -87.650047,
+      "lat": 41.850029
+    }
+  },
+  {
+    "id": 5391959,
+    "name": "San Francisco",
+    "country": "US",
+    "coord": {
+      "lon": -122.419418,
+      "lat": 37.774929
+    }
+  },
+  {
+    "id": 5128638,
+    "name": "New York",
+    "country": "US",
+    "coord": {
+      "lon": -75.499901,
+      "lat": 43.000351
+    }
+  },
+  {
+    "id": 4684888,
+    "name": "Dallas",
+    "country": "US",
+    "coord": {
+      "lon": -96.806671,
+      "lat": 32.783058
+    }
+  },
+  {
+    "id": 5419384,
+    "name": "Denver",
+    "country": "US",
+    "coord": {
+      "lon": -104.984703,
+      "lat": 39.739151
+    }
+  },
+  {
+    "id": 4833123,
+    "name": "Durham",
+    "country": "US",
+    "coord": {
+      "lon": -72.681213,
+      "lat": 41.481758
+    }
+  },
+  {
+    "id": 4699540,
+    "name": "Huntsville",
+    "country": "US",
+    "coord": {
+      "lon": -95.550781,
+      "lat": 30.72353
+    }
+  },
+  {
+    "id": 5368361,
+    "name": "Los Angeles",
+    "country": "US",
+    "coord": {
+      "lon": -118.243683,
+      "lat": 34.052231
+    }
+  },
+  {
+    "id": 4275586,
+    "name": "Minneapolis",
+    "country": "US",
+    "coord": {
+      "lon": -97.706703,
+      "lat": 39.121941
+    }
+  },
+  {
+    "id": 4405588,
+    "name": "Richmond",
+    "country": "US",
+    "coord": {
+      "lon": -93.976891,
+      "lat": 39.278622
+    }
+  },
+  {
+    "id": 4735013,
+    "name": "Sunnyvale",
+    "country": "US",
+    "coord": {
+      "lon": -96.560822,
+      "lat": 32.79652
+    }
+  },
+  {
+    "id": 4772354,
+    "name": "McLean",
+    "country": "US",
+    "coord": {
+      "lon": -77.177483,
+      "lat": 38.93428
+    }
+  },
+  {
+    "id": 4955219,
+    "name": "Westford",
+    "country": "US",
+    "coord": {
+      "lon": -71.437843,
+      "lat": 42.579262
+    }
+  },
+  {
+    "id": 2950158,
+    "name": "Berlin",
+    "country": "DE",
+    "coord": {
+      "lon": 10.45,
+      "lat": 54.033329
+    }
+  },
+  {
+    "id": 3078610,
+    "name": "Brno",
+    "country": "CZ",
+    "coord": {
+      "lon": 16.60796,
+      "lat": 49.195221
+    }
+  },
+  {
+    "id": 6356055,
+    "name": "Barcelona",
+    "country": "ES",
+    "coord": {
+      "lon": 2.12804,
+      "lat": 41.399422
+    }
+  },
+  {
+    "id": 2964574,
+    "name": "Dublin",
+    "country": "IE",
+    "coord": {
+      "lon": -6.26719,
+      "lat": 53.34399
+    }
+  },
+  {
+    "id": 2643743,
+    "name": "London",
+    "country": "GB",
+    "coord": {
+      "lon": -0.12574,
+      "lat": 51.50853
+    }
+  },
+  {
+    "id": 3173434,
+    "name": "Province of Milan",
+    "country": "IT",
+    "coord": {
+      "lon": 9.5,
+      "lat": 45.5
+    }
+  },
 ]
