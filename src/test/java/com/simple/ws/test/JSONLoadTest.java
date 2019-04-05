@@ -1,7 +1,9 @@
 package com.simple.ws.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
+
 import com.simple.ws.SimpleWSImpl;
 
 public class JSONLoadTest {
@@ -10,16 +12,16 @@ public class JSONLoadTest {
 	public void testRandomCity() {
 		SimpleWSImpl impl = new SimpleWSImpl();
 		String response = impl.getRandomCity();
-		assertTrue("Successfully retrieved a random city", response != null);
+		assertTrue("Did not successfully retrieve a random city", response != null);
 	}
 
 	@Test
 	public void testGetCountryForRandomCity() {
 		SimpleWSImpl impl = new SimpleWSImpl();
 		String city = impl.getRandomCity();
-		assertTrue("Successfully retrieved a random city", city != null);
+		assertTrue("Did not successfully retrieve a random city", city != null);
 		String response = impl.getCountryForCity(city);
-		assertTrue("Successfully retrieved a country for random city (" + city + ")", response != null);
+		assertTrue("Did not successfully retrieve a country for random city (" + city + ")", response != null);
 	}
 
 	@Test
@@ -27,10 +29,10 @@ public class JSONLoadTest {
 		SimpleWSImpl impl = new SimpleWSImpl();
 		String city = "Brisbane";
 		String response = impl.getCountryForCity(city);
-		assertTrue("Successfully retrieved Australia for Brisbane", response.equalsIgnoreCase("AU"));
+		assertTrue("Did not successfully retrieve Australia for Brisbane", response.equalsIgnoreCase("AU"));
 
 		String city2 = "Makati City";
 		String response2 = impl.getCountryForCity(city2);
-		assertTrue("Successfully retrieved PH for Makati City", response2.equalsIgnoreCase("PH"));
+		assertTrue("Did not successfully retrieve PH for Makati City", response2.equalsIgnoreCase("PH"));
 	}
 }

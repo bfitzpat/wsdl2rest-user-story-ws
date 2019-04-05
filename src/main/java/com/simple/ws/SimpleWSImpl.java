@@ -16,18 +16,20 @@
  */
 package com.simple.ws;
 
-import javax.jws.WebService;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import javax.jws.WebService;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
  
 //Service Implementation
 @WebService(endpointInterface = "com.simple.ws.SimpleWS")
@@ -39,14 +41,18 @@ public class SimpleWSImpl implements SimpleWS{
 		JSONParser jsonParser = new JSONParser();
 		
 		try {
-			String fileName = "com/simple/ws/thin.city.list.json";
-			Path path = Paths.get(this.getClass().getClassLoader()
-				.getResource(fileName).toURI());
-			if (path != null) {
-				String content = new String(Files.readAllBytes(path));
-
+			String fileName = "com/simple/ws/thincitylist.json";
+			
+			ClassLoader classLoader = getClass().getClassLoader();
+		    Path path = Paths.get(classLoader.getResource(fileName).toURI());
+		    	          
+    	    Stream<String> lines = Files.lines(path);
+    	    String data = lines.collect(Collectors.joining("\n"));
+    	    lines.close();				
+    	    
+			if (data != null) {
 				//Read JSON file
-				Object obj = jsonParser.parse(content);
+				Object obj = jsonParser.parse(data);
 	
 				JSONArray cityList = (JSONArray) obj;
 				return cityList;
