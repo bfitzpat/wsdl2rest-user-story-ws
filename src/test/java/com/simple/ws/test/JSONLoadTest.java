@@ -9,6 +9,13 @@ import com.simple.ws.SimpleWSImpl;
 public class JSONLoadTest {
 
 	@Test
+	public void testFileLoad() {
+		SimpleWSImpl impl = new SimpleWSImpl();
+		String response = impl.getFile("testFile.txt");
+		assertTrue("Did not load test file correctly", response.contains("This file is for testing only"));
+	}
+	
+	@Test
 	public void testRandomCity() {
 		SimpleWSImpl impl = new SimpleWSImpl();
 		String response = impl.getRandomCity();

@@ -16,14 +16,9 @@
  */
 package com.simple.ws;
 
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
+import java.util.Scanner;
 import javax.jws.WebService;
 
 import org.json.simple.JSONArray;
@@ -41,14 +36,8 @@ public class SimpleWSImpl implements SimpleWS{
 		JSONParser jsonParser = new JSONParser();
 		
 		try {
-			String fileName = "com/simple/ws/thincitylist.json";
-			
-			ClassLoader classLoader = getClass().getClassLoader();
-		    Path path = Paths.get(classLoader.getResource(fileName).toURI());
-		    	          
-    	    Stream<String> lines = Files.lines(path);
-    	    String data = lines.collect(Collectors.joining("\n"));
-    	    lines.close();				
+			String fileName = "thincitylist.json";
+			String data = getFile(fileName);
     	    
 			if (data != null) {
 				//Read JSON file
@@ -57,10 +46,6 @@ public class SimpleWSImpl implements SimpleWS{
 				JSONArray cityList = (JSONArray) obj;
 				return cityList;
 			}
- 		} catch (FileNotFoundException e) {
-			 throw e;
-		} catch (IOException e) {
-			throw e;
 		} catch (ParseException e) {
 			throw e;
 		}
@@ -119,4 +104,21 @@ public class SimpleWSImpl implements SimpleWS{
 		JSONObject jsonObject = (JSONObject) jsonArray.get(randomIndex);
 		return jsonObject;
 	}	
+
+	// public for testing
+	public String getFile(String fileName) {
+		StringBuilder result = new StringBuilder("");
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource(fileName).getFile());
+		try (Scanner scanner = new Scanner(file)) {
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				result.append(line).append("\n");
+			}
+			scanner.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return result.toString();
+	}
 }
